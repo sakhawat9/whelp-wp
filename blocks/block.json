@@ -93,6 +93,13 @@
 		"buttonLinkTarget": {
             "type": "boolean",
             "default": false
-        }
+        },
+		"buttonTextColor": {
+			"type": "string"
+		},
+		"buttonBackgroundColor": {
+			"type": "string",
+			"default": "red"
+		}
 	}
 }

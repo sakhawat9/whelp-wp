@@ -1,5 +1,5 @@
 import { registerBlockType } from '@wordpress/blocks';
-import '../../../assets/sass/whatshelp-main.scss';
+import './whatshelp-main.scss';
 import Edit from './edit';
 import save from './save';
 

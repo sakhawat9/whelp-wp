@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _assets_sass_whatshelp_main_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../assets/sass/whatshelp-main.scss */ "../../assets/sass/whatshelp-main.scss");
+/* harmony import */ var _whatshelp_main_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./whatshelp-main.scss */ "./src/whatshelp-main.scss");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
 
@@ -52,8 +52,11 @@ function Edit(props) {
     iconTarget,
     visibility,
     border,
-    buttonLinkTarget
+    buttonLinkTarget,
+    buttonTextColor,
+    buttonBackgroundColor
   } = attributes;
+  console.log(buttonType);
   const onChangeAlignment = newAlignment => {
     setAttributes({
       textAlignment: newAlignment
@@ -94,6 +97,16 @@ function Edit(props) {
       buttonLinkTarget: newLinkTarget
     });
   };
+  const onChangeButtonBackgroundColor = newBgColor => {
+    setAttributes({
+      buttonBackgroundColor: newBgColor
+    });
+  };
+  const onChangeButtonTextColor = newTextColor => {
+    setAttributes({
+      buttonTextColor: newTextColor
+    });
+  };
   const textClasses = classnames__WEBPACK_IMPORTED_MODULE_3___default()(`wHelpButtons-align-${textAlignment}`);
   const classes = classnames__WEBPACK_IMPORTED_MODULE_3___default()(`wHelpButtons wHelp-button-4 wHelp-btn-bg`);
   const buttonSizeOptions = [{
@@ -105,6 +118,13 @@ function Edit(props) {
   }, {
     value: 'size-large',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Large', "ta-whatshelp")
+  }];
+  const buttonTypeOptions = [{
+    value: 'basic-button',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Basic Button', "ta-whatshelp")
+  }, {
+    value: 'advance-button',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Advance Button', "ta-whatshelp")
   }];
   const borderRadiusOptions = [{
     value: 'border-squared',
@@ -160,7 +180,25 @@ function Edit(props) {
     value: 'ridge',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Ridge', "ta-whatshelp")
   }];
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, buttonType === "basic-button" ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SelectControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button Type', "ta-whatshelp"),
+    value: buttonType,
+    options: buttonTypeOptions.map(_ref => {
+      let {
+        value,
+        label
+      } = _ref;
+      return {
+        value,
+        label
+      };
+    }),
+    onChange: newButton => {
+      setAttributes({
+        buttonType: newButton
+      });
+    }
+  }))), buttonType === "basic-button" ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button Style', "ta-whatshelp"),
     initialOpen: false
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.ToggleControl, {
@@ -170,11 +208,11 @@ function Edit(props) {
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button Size', "ta-whatshelp"),
     value: buttonSize,
-    options: buttonSizeOptions.map(_ref => {
+    options: buttonSizeOptions.map(_ref2 => {
       let {
         value,
         label
-      } = _ref;
+      } = _ref2;
       return {
         value,
         label
@@ -188,11 +226,11 @@ function Edit(props) {
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Border Radius', "ta-whatshelp"),
     value: borderRadius,
-    options: borderRadiusOptions.map(_ref2 => {
+    options: borderRadiusOptions.map(_ref3 => {
       let {
         value,
         label
-      } = _ref2;
+      } = _ref3;
       return {
         value,
         label
@@ -206,11 +244,11 @@ function Edit(props) {
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Visibility on', "ta-whatshelp"),
     value: visibility,
-    options: visibilityOn.map(_ref3 => {
+    options: visibilityOn.map(_ref4 => {
       let {
         value,
         label
-      } = _ref3;
+      } = _ref4;
       return {
         value,
         label
@@ -224,11 +262,11 @@ function Edit(props) {
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Border', "ta-whatshelp"),
     value: border,
-    options: borderWidth.map(_ref4 => {
+    options: borderWidth.map(_ref5 => {
       let {
         value,
         label
-      } = _ref4;
+      } = _ref5;
       return {
         value,
         label
@@ -289,11 +327,11 @@ function Edit(props) {
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button Size', "ta-whatshelp"),
     value: buttonSize,
-    options: buttonSizeOptions.map(_ref5 => {
+    options: buttonSizeOptions.map(_ref6 => {
       let {
         value,
         label
-      } = _ref5;
+      } = _ref6;
       return {
         value,
         label
@@ -307,11 +345,11 @@ function Edit(props) {
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Border Radius', "ta-whatshelp"),
     value: borderRadius,
-    options: borderRadiusOptions.map(_ref6 => {
+    options: borderRadiusOptions.map(_ref7 => {
       let {
         value,
         label
-      } = _ref6;
+      } = _ref7;
       return {
         value,
         label
@@ -325,11 +363,11 @@ function Edit(props) {
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Visibility on', "ta-whatshelp"),
     value: visibility,
-    options: visibilityOn.map(_ref7 => {
+    options: visibilityOn.map(_ref8 => {
       let {
         value,
         label
-      } = _ref7;
+      } = _ref8;
       return {
         value,
         label
@@ -343,11 +381,11 @@ function Edit(props) {
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Border', "ta-whatshelp"),
     value: border,
-    options: borderWidth.map(_ref8 => {
+    options: borderWidth.map(_ref9 => {
       let {
         value,
         label
-      } = _ref8;
+      } = _ref9;
       return {
         value,
         label
@@ -358,7 +396,22 @@ function Edit(props) {
         border: newSize
       });
     }
-  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    initialOpen: true,
+    disableCustomColors: false,
+    colorSettings: [{
+      value: buttonBackgroundColor,
+      onChange: onChangeButtonBackgroundColor,
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button Background Color', 'call-to-action')
+    }, {
+      value: buttonTextColor,
+      onChange: onChangeButtonTextColor,
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button Text Color', 'call-to-action')
+    }]
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.ContrastChecker, {
+    textColor: buttonTextColor,
+    backgroundColor: buttonBackgroundColor
+  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, {
     controls: [{
       icon: 'admin-links',
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Links', 'ta-whatshelp'),
@@ -392,6 +445,10 @@ function Edit(props) {
     allowedFormats: [],
     className: "title"
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    style: {
+      backgroundColor: buttonBackgroundColor,
+      color: buttonTextColor
+    },
     onChange: advancedBtnOnlineBadge,
     value: online,
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('I am online', 'ta-whatshelp'),
@@ -436,6 +493,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _whatshelp_main_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./whatshelp-main.scss */ "./src/whatshelp-main.scss");
+
 
 
 
@@ -573,10 +632,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ "../../assets/sass/whatshelp-main.scss":
-/*!*********************************************!*\
-  !*** ../../assets/sass/whatshelp-main.scss ***!
-  \*********************************************/
+/***/ "./src/whatshelp-main.scss":
+/*!*********************************!*\
+  !*** ./src/whatshelp-main.scss ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -747,7 +806,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _assets_sass_whatshelp_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../assets/sass/whatshelp-main.scss */ "../../assets/sass/whatshelp-main.scss");
+/* harmony import */ var _whatshelp_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./whatshelp-main.scss */ "./src/whatshelp-main.scss");
 /* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
 /* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/save.js");
 

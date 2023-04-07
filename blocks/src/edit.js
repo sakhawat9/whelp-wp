@@ -6,15 +6,18 @@ import {
 	AlignmentToolbar,
 	InspectorControls,
 	URLInput,
+	PanelColorSettings,
+	ContrastChecker
 } from '@wordpress/block-editor';
 import classnames from 'classnames';
-import '../../../assets/sass/whatshelp-main.scss';
+import './whatshelp-main.scss';
 import { IconButton, PanelBody, ToggleControl } from '@wordpress/components';
 
 const { SelectControl } = wp.components;
 
 export default function Edit( props ) {
 	const { attributes, isSelected, setAttributes } = props;
+
 	const {
 		buttonSize,
 		buttonType,
@@ -29,11 +32,11 @@ export default function Edit( props ) {
 		iconTarget,
 		visibility,
 		border,
-		buttonLinkTarget
+		buttonLinkTarget,
+		buttonTextColor,
+		buttonBackgroundColor,
 	} = attributes;
-
-
-
+console.log(buttonType);
 	const onChangeAlignment = ( newAlignment ) => {
 		setAttributes( { textAlignment: newAlignment } );
 	};
@@ -59,6 +62,12 @@ export default function Edit( props ) {
 	const onButtonLinkTarget = (newLinkTarget) => {
 		setAttributes({ buttonLinkTarget:  newLinkTarget});
 	}
+	const onChangeButtonBackgroundColor = ( newBgColor ) => {
+		setAttributes( { buttonBackgroundColor: newBgColor } );
+	};
+	const onChangeButtonTextColor = ( newTextColor ) => {
+		setAttributes( { buttonTextColor: newTextColor } );
+	};
 
 	const textClasses = classnames(
 		`wHelpButtons-align-${ textAlignment }`
@@ -70,6 +79,10 @@ export default function Edit( props ) {
 		{ value: 'size-small', label: __( 'Small', "ta-whatshelp" ) },
 		{ value: 'size-medium', label: __( 'Medium', "ta-whatshelp" ) },
 		{ value: 'size-large', label: __( 'Large', "ta-whatshelp" ) },
+	];
+	const buttonTypeOptions = [
+		{ value: 'basic-button', label: __( 'Basic Button', "ta-whatshelp" ) },
+		{ value: 'advance-button', label: __( 'Advance Button', "ta-whatshelp" ) },
 	];
 	const borderRadiusOptions = [
 		{ value: 'border-squared', label: __( 'Border Squared', "ta-whatshelp" ) },
@@ -96,6 +109,23 @@ export default function Edit( props ) {
 	];
 	return (
 		<>
+		<InspectorControls>
+			<PanelBody>
+				<SelectControl
+					label={ __( 'Button Type', "ta-whatshelp" ) }
+					value={ buttonType }
+					options={ buttonTypeOptions.map(
+						( { value, label } ) => ( {
+							value,
+							label,
+						} )
+					) }
+					onChange={ ( newButton ) => {
+						setAttributes( { buttonType: newButton } );
+					} }
+				/>
+			</PanelBody>
+		</InspectorControls>
 		{buttonType === "basic-button" 
 			? 
 				<>
@@ -106,6 +136,7 @@ export default function Edit( props ) {
 								checked={ buttonLinkTarget }
 								onChange={ onButtonLinkTarget }
 							/>
+							
 							<SelectControl
 								label={ __( 'Button Size', "ta-whatshelp" ) }
 								value={ buttonSize }
@@ -276,6 +307,27 @@ export default function Edit( props ) {
 									setAttributes( { border: newSize } );
 								} }
 							/>
+							<PanelColorSettings
+								initialOpen
+								disableCustomColors={ false }
+								colorSettings={ [
+									{
+										value: buttonBackgroundColor,
+										onChange: onChangeButtonBackgroundColor,
+										label: __( 'Button Background Color', 'call-to-action' ),
+									},
+									{
+										value: buttonTextColor,
+										onChange: onChangeButtonTextColor,
+										label: __( 'Button Text Color', 'call-to-action' ),
+									},
+								] }
+							>
+							<ContrastChecker
+								textColor={ buttonTextColor }
+								backgroundColor={ buttonBackgroundColor }
+							/>
+				</PanelColorSettings>
 						</PanelBody>
 					</InspectorControls>
 					<BlockControls
@@ -317,6 +369,12 @@ export default function Edit( props ) {
 								className="title"
 							/>
 							<RichText
+								style= {
+									{
+										backgroundColor:buttonBackgroundColor,
+										color:buttonTextColor
+									}
+								}
 								onChange={ advancedBtnOnlineBadge }
 								value={ online }
 								placeholder={ __( 'I am online', 'ta-whatshelp' ) }

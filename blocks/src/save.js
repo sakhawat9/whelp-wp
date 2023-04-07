@@ -1,5 +1,6 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import classnames from 'classnames';
+import './whatshelp-main.scss';
 export default function save( { attributes } ) {
 	const {
 		buttonSize,
