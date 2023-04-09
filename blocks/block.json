@@ -5,6 +5,10 @@
 	"category": "whatsapp-block",
 	"icon": "whatsapp",
 	"description": "A block for whatsapp to show interactive whatapp button with nice way.",
+	"textdomain": "ta-whatshelp",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/index.css",
 	"supports": {
 		"html": false,
 		"color": {
@@ -24,9 +28,6 @@
 			"links": true
 		}
 	},
-	"textdomain": "ta-whatshelp",
-	"editorScript": "file:./build/index.js",
-	"editorStyle": "file:./build/index.css",
 	"attributes": {
 		"text": {
 			"type": "string",

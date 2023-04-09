@@ -10,13 +10,17 @@ import {
 	ContrastChecker
 } from '@wordpress/block-editor';
 import classnames from 'classnames';
-import './whatshelp-main.scss';
+// import './whatshelp-main.scss';
+// import { IconButton, PanelBody, ToggleControl, __experimentalInputControl as InputControl } from '@wordpress/components';
 import { IconButton, PanelBody, ToggleControl } from '@wordpress/components';
+import { useState } from '@wordpress/compose';
 
 const { SelectControl } = wp.components;
 
 export default function Edit( props ) {
 	const { attributes, isSelected, setAttributes } = props;
+	// const [ value, setValue ] = useState( '' );
+	// console.log(value);
 
 	const {
 		buttonSize,
@@ -36,7 +40,7 @@ export default function Edit( props ) {
 		buttonTextColor,
 		buttonBackgroundColor,
 	} = attributes;
-console.log(buttonType);
+
 	const onChangeAlignment = ( newAlignment ) => {
 		setAttributes( { textAlignment: newAlignment } );
 	};
@@ -107,6 +111,7 @@ console.log(buttonType);
 		{ value: 'groove', label: __( 'Groove', "ta-whatshelp" ) },
 		{ value: 'ridge', label: __( 'Ridge', "ta-whatshelp" ) }
 	];
+
 	return (
 		<>
 		<InspectorControls>
@@ -323,11 +328,15 @@ console.log(buttonType);
 									},
 								] }
 							>
-							<ContrastChecker
-								textColor={ buttonTextColor }
-								backgroundColor={ buttonBackgroundColor }
-							/>
-				</PanelColorSettings>
+								<ContrastChecker
+									textColor={ buttonTextColor }
+									backgroundColor={ buttonBackgroundColor }
+								/>
+							</PanelColorSettings>
+								{/* <InputControl
+									value={ value }
+									onChange={ ( nextValue ) => setValue( nextValue ?? '' ) }
+								/> */}
 						</PanelBody>
 					</InspectorControls>
 					<BlockControls
