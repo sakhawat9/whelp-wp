@@ -5,6 +5,10 @@
 	"category": "whatsapp-block",
 	"icon": "whatsapp",
 	"description": "A block for whatsapp to show interactive whatapp button with nice way.",
+	"textdomain": "ta-whatshelp",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css",
 	"supports": {
 		"html": false,
 		"color": {
@@ -24,33 +28,27 @@
 			"links": true
 		}
 	},
-	"textdomain": "ta-whatshelp",
-	"editorScript": "file:./build/index.js",
-	"editorStyle": "file:./build/index.css",
+	
 	"attributes": {
 		"text": {
 			"type": "string",
-			"source": "html",
-			"selector": "button",
 			"default": "How can I help you?"
 		},
 		"info": {
 			"type": "string",
-			"source": "html",
-			"selector": "p",
 			"default": "Robert / Sales Support"
 		},
 		"title": {
 			"type": "string",
-			"source": "html",
-			"selector": "p",
 			"default": "How can I help you?"
 		},
 		"online": {
 			"type": "string",
-			"source": "html",
-			"selector": "p",
 			"default": "I am online"
+		},
+		"offline": {
+			"type": "string",
+			"default": "I am offline"
 		},
 		"buttonType": {
 			"type": "string",
@@ -76,16 +74,6 @@
 			"type": "string",
 			"default": "left"
 		},
-		"buttonUrl": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a",
-			"attribute": "href"
-		},
-		"links": {
-			"type": "boolean",
-			"default": false
-		},
 		"iconTarget": {
             "type": "boolean",
             "default": false
@@ -99,7 +87,11 @@
 		},
 		"buttonBackgroundColor": {
 			"type": "string",
-			"default": "red"
+			"default": "#26c281"
+		},
+		"numberInput": {
+			"type": "string",
+			"default": ""
 		}
 	}
 }

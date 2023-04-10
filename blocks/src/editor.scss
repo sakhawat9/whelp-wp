@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+.wp-block-create-block-whatsapp-button{
+    &.wHelp-desktop-only {
+        display: inline-block
+    }
+    &.wHelp-tablet-only {
+      display: inline-block
+    }
+    &.wHelp-mobile-only {
+      display: inline-block
+    }
+    &.wHelp-mobile-tablet-only {
+      display: inline-block
+    }
+}
+
+
