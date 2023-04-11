@@ -2523,10 +2523,10 @@ export default function Edit(props) {
               initialOpen={false}
             >
               <TextControl
-                label={__("Number Input", "ta-whatshelp")}
+                label={__("Number", "ta-whatshelp")}
                 value={numberInput}
                 onChange={(val) => setAttributes({ numberInput: val })}
-                placeholder={__("018(--__--)", "ta-whatshelp")}
+                help={__("Add your contact number including country code eg: +880123456789", "ta-whatshelp")}
               />
               <ToggleControl
                 label={__("Open link in new window", "ta-whatshelp")}
@@ -2621,7 +2621,7 @@ export default function Edit(props) {
                 label={__("Number", "ta-whatshelp")}
                 value={numberInput}
                 onChange={(val) => setAttributes({ numberInput: val })}
-                placeholder={__("018(--__--)", "ta-whatshelp")}
+                help={__("Add your contact number including country code eg: +880123456789", "ta-whatshelp")}
               />
               <ToggleControl
                 label={__("Open link in new window", "ta-whatshelp")}
@@ -2646,33 +2646,38 @@ export default function Edit(props) {
                 label={__("Agent Info", "ta-whatshelp")}
                 value={info}
                 onChange={(val) => setAttributes({ info: val })}
+                help={__("Write agent name & agent title", "ta-whatshelp")}
               />
               <TextControl
                 label={__("Button Label", "ta-whatshelp")}
                 value={title}
                 onChange={(val) => setAttributes({ title: val })}
+                help={__("Add custom button label", "ta-whatshelp")}
               />
               <TextControl
-                label={__("Online Badget Text", "ta-whatshelp")}
+                label={__("Online Badge Text", "ta-whatshelp")}
                 value={online}
                 onChange={(val) => setAttributes({ online: val })}
+                help={__("Add custom badget text when user in online.", "ta-whatshelp")}
               />
               <TextControl
-                label={__("Offline Badget Text", "ta-whatshelp")}
+                label={__("Offline Badge Text", "ta-whatshelp")}
                 value={offline}
                 onChange={(val) => setAttributes({ offline: val })}
+                help={__("Add custom badget text when user in offline.", "ta-whatshelp")}
               />
             </PanelBody>
             <PanelBody
 							title={__('Chat Settings', 'ta-whatshelp')}
 							initialOpen={false}
 						>
-						<ComboboxControl
+						  <ComboboxControl
 								label={__('Timezone', 'ta-whatshelp')}
 								value={timeZone}
 								options={filteredOptions}
 								onChange={onFontSizeChange}
 								onInputChange={onInputChange}
+                help={__("When using the date and time from the user browser you can transform it to your current timezone (in case your user is in a different timezone)", "ta-whatshelp")}
 							/>
               <PanelBody
                 title={__("Monthday", "ta-whatshelp")}

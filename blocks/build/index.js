@@ -1974,12 +1974,12 @@ function Edit(props) {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("WhatsApp Number", "ta-whatshelp"),
     initialOpen: false
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number Input", "ta-whatshelp"),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number", "ta-whatshelp"),
     value: numberInput,
     onChange: val => setAttributes({
       numberInput: val
     }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("018(--__--)", "ta-whatshelp")
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add your contact number including country code eg: +880123456789", "ta-whatshelp")
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Open link in new window", "ta-whatshelp"),
     checked: buttonLinkTarget,
@@ -2078,7 +2078,7 @@ function Edit(props) {
     onChange: val => setAttributes({
       numberInput: val
     }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("018(--__--)", "ta-whatshelp")
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add your contact number including country code eg: +880123456789", "ta-whatshelp")
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Open link in new window", "ta-whatshelp"),
     checked: buttonLinkTarget,
@@ -2106,25 +2106,29 @@ function Edit(props) {
     value: info,
     onChange: val => setAttributes({
       info: val
-    })
+    }),
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Write agent name & agent title", "ta-whatshelp")
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(TextControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Label", "ta-whatshelp"),
     value: title,
     onChange: val => setAttributes({
       title: val
-    })
+    }),
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add custom button label", "ta-whatshelp")
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Online Badget Text", "ta-whatshelp"),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Online Badge Text", "ta-whatshelp"),
     value: online,
     onChange: val => setAttributes({
       online: val
-    })
+    }),
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add custom badget text when user in online.", "ta-whatshelp")
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Offline Badget Text", "ta-whatshelp"),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Offline Badge Text", "ta-whatshelp"),
     value: offline,
     onChange: val => setAttributes({
       offline: val
-    })
+    }),
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add custom badget text when user in offline.", "ta-whatshelp")
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Chat Settings', 'ta-whatshelp'),
     initialOpen: false
@@ -2133,7 +2137,8 @@ function Edit(props) {
     value: timeZone,
     options: filteredOptions,
     onChange: onFontSizeChange,
-    onInputChange: onInputChange
+    onInputChange: onInputChange,
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("When using the date and time from the user browser you can transform it to your current timezone (in case your user is in a different timezone)", "ta-whatshelp")
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Monthday", "ta-whatshelp"),
     initialOpen: false
@@ -2483,7 +2488,7 @@ function save(_ref) {
   }))) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     className: `button-wrapper ${textClasses}`
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("a", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
-    className: `avatar-active ${classes} ${buttonSize} ${borderRadius} ${visibility}`
+    className: `${classes} ${buttonSize} ${borderRadius} ${visibility}`
   }), {
     "data-btnavailablety": `{ "monday":"${mondayStart}-${mondayEnd}", "tuesday":"${tuesdayStart}-${tuesdayEnd}", "wednesday":"${wednesdayStart}-${wednesdayEnd}", "thursday":"${thursdayStart}-${thursdayEnd}", "friday":"${fridayStart}-${fridayEnd}", "saturday":"${saturdayStart}-${saturdayEnd}", "sunday":"${sundayStart}-${sundayEnd}" }`,
     "data-timezone": timeZone,
