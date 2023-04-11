@@ -1,6 +1,7 @@
 import { useBlockProps, RichText } from "@wordpress/block-editor";
 import classnames from "classnames";
-
+const agentImage = require('./images/shakib-al-hasan.jpg');
+console.log(agentImage);
 export default function save({ attributes }) {
   const {
     buttonSize,
@@ -13,8 +14,6 @@ export default function save({ attributes }) {
     offline,
     textAlignment,
     buttonLinkTarget,
-    buttonBackgroundColor,
-    buttonTextColor,
     visibility,
     border,
     iconTarget,
@@ -71,7 +70,7 @@ export default function save({ attributes }) {
             rel="noopener noreferrer"
             target={buttonLinkTarget ? "_blank" : "_self"}
           >
-            <img src={imageUrl} alt="agent" />
+            <img src={imageUrl ? imageUrl : agentImage} alt="agent" />
             <div className="info-wrapper">
               <RichText.Content value={info} tagName="p" className="info" />
               <RichText.Content value={title} tagName="p" className="title" />
@@ -79,19 +78,11 @@ export default function save({ attributes }) {
                 value={online}
                 tagName="p"
                 className="online"
-                style={{
-                  backgroundColor: buttonBackgroundColor,
-                  color: buttonTextColor,
-                }}
               />
               <RichText.Content
                 value={offline}
                 tagName="p"
                 className="offline"
-                style={{
-                  backgroundColor: buttonBackgroundColor,
-                  color: buttonTextColor,
-                }}
               />
             </div>
           </a>

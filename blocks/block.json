@@ -78,13 +78,6 @@
             "type": "boolean",
             "default": false
         },
-		"buttonTextColor": {
-			"type": "string"
-		},
-		"buttonBackgroundColor": {
-			"type": "string",
-			"default": "#26c281"
-		},
 		"numberInput": {
 			"type": "string",
 			"default": ""

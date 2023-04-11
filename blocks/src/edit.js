@@ -5,14 +5,13 @@ import {
   BlockControls,
   AlignmentToolbar,
   InspectorControls,
-  PanelColorSettings,
-  ContrastChecker,
   MediaUpload,
 } from "@wordpress/block-editor";
 import classnames from "classnames";
 import "./editor.scss";
-import { PanelBody, ToggleControl, Button, TimePicker, ComboboxControl } from "@wordpress/components";
+import { PanelBody, ToggleControl, Button, ComboboxControl } from "@wordpress/components";
 import { useState } from '@wordpress/element';
+const agentImage = require('./images/shakib-al-hasan.jpg');
 
 const { SelectControl, TextControl } = wp.components;
 
@@ -2403,8 +2402,6 @@ export default function Edit(props) {
     iconTarget,
     visibility,
     buttonLinkTarget,
-    buttonTextColor,
-    buttonBackgroundColor,
     numberInput,
     imageUrl,
     timeZone,
@@ -2462,12 +2459,6 @@ export default function Edit(props) {
   };
   const onButtonLinkTarget = (newLinkTarget) => {
     setAttributes({ buttonLinkTarget: newLinkTarget });
-  };
-  const onChangeButtonBackgroundColor = (newBgColor) => {
-    setAttributes({ buttonBackgroundColor: newBgColor });
-  };
-  const onChangeButtonTextColor = (newTextColor) => {
-    setAttributes({ buttonTextColor: newTextColor });
   };
 
   const textClasses = classnames(`wHelpButtons-align-${textAlignment}`);
@@ -2837,27 +2828,7 @@ export default function Edit(props) {
                   setAttributes({ borderRadius: newSize });
                 }}
               />
-              <PanelColorSettings
-                initialOpen
-                disableCustomColors={false}
-                colorSettings={[
-                  {
-                    value: buttonBackgroundColor,
-                    onChange: onChangeButtonBackgroundColor,
-                    label: __("Button Background Color", "ta-whatshelp"),
-                  },
-                  {
-                    value: buttonTextColor,
-                    onChange: onChangeButtonTextColor,
-                    label: __("Button Text Color", "ta-whatshelp"),
-                  },
-                ]}
-              >
-                <ContrastChecker
-                  textColor={buttonTextColor}
-                  backgroundColor={buttonBackgroundColor}
-                />
-              </PanelColorSettings>
+              
             </PanelBody>
           </InspectorControls>
           <BlockControls>
@@ -2874,7 +2845,7 @@ export default function Edit(props) {
               data-btnavailablety={`{ "monday":"${mondayStart}-${mondayEnd}", "tuesday":"${tuesdayStart}-${tuesdayEnd}", "wednesday":"${wednesdayStart}-${wednesdayEnd}", "thursday":"${thursdayStart}-${thursdayEnd}", "friday":"${fridayStart}-${fridayEnd}", "saturday":"${saturdayStart}-${saturdayEnd}", "sunday":"${sundayStart}-${sundayEnd}" }`}
               data-timezone={timeZone}
             >
-              <img src={imageUrl} alt="agent" />
+              <img src={imageUrl ? imageUrl : agentImage} alt="agent" />
               <div className="info-wrapper">
                 <RichText
                   onChange={advancedBtnInfo}
@@ -2893,10 +2864,6 @@ export default function Edit(props) {
                   className="title"
                 />
                 <RichText
-                  style={{
-                    backgroundColor: buttonBackgroundColor,
-                    color: buttonTextColor,
-                  }}
                   onChange={advancedBtnOnlineBadge}
                   value={online}
                   placeholder={__("I am online", "ta-whatshelp")}
@@ -2905,10 +2872,6 @@ export default function Edit(props) {
                   className="online"
                 />
                 <RichText
-                  style={{
-                    backgroundColor: buttonBackgroundColor,
-                    color: buttonTextColor,
-                  }}
                   onChange={advancedBtnOnlineBadge}
                   value={offline}
                   placeholder={__("I'm not available", "ta-whatshelp")}

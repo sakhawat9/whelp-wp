@@ -32,6 +32,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const agentImage = __webpack_require__(/*! ./images/shakib-al-hasan.jpg */ "./src/images/shakib-al-hasan.jpg");
 const {
   SelectControl,
   TextControl
@@ -1831,8 +1832,6 @@ function Edit(props) {
     iconTarget,
     visibility,
     buttonLinkTarget,
-    buttonTextColor,
-    buttonBackgroundColor,
     numberInput,
     imageUrl,
     timeZone,
@@ -1898,16 +1897,6 @@ function Edit(props) {
   const onButtonLinkTarget = newLinkTarget => {
     setAttributes({
       buttonLinkTarget: newLinkTarget
-    });
-  };
-  const onChangeButtonBackgroundColor = newBgColor => {
-    setAttributes({
-      buttonBackgroundColor: newBgColor
-    });
-  };
-  const onChangeButtonTextColor = newTextColor => {
-    setAttributes({
-      buttonTextColor: newTextColor
     });
   };
   const textClasses = classnames__WEBPACK_IMPORTED_MODULE_4___default()(`wHelpButtons-align-${textAlignment}`);
@@ -2319,22 +2308,7 @@ function Edit(props) {
         borderRadius: newSize
       });
     }
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.PanelColorSettings, {
-    initialOpen: true,
-    disableCustomColors: false,
-    colorSettings: [{
-      value: buttonBackgroundColor,
-      onChange: onChangeButtonBackgroundColor,
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Background Color", "ta-whatshelp")
-    }, {
-      value: buttonTextColor,
-      onChange: onChangeButtonTextColor,
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Text Color", "ta-whatshelp")
-    }]
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.ContrastChecker, {
-    textColor: buttonTextColor,
-    backgroundColor: buttonBackgroundColor
-  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.BlockControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.AlignmentToolbar, {
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.BlockControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.AlignmentToolbar, {
     value: textAlignment,
     onChange: onChangeAlignment
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
@@ -2345,7 +2319,7 @@ function Edit(props) {
     "data-btnavailablety": `{ "monday":"${mondayStart}-${mondayEnd}", "tuesday":"${tuesdayStart}-${tuesdayEnd}", "wednesday":"${wednesdayStart}-${wednesdayEnd}", "thursday":"${thursdayStart}-${thursdayEnd}", "friday":"${fridayStart}-${fridayEnd}", "saturday":"${saturdayStart}-${saturdayEnd}", "sunday":"${sundayStart}-${sundayEnd}" }`,
     "data-timezone": timeZone
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("img", {
-    src: imageUrl,
+    src: imageUrl ? imageUrl : agentImage,
     alt: "agent"
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     className: "info-wrapper"
@@ -2364,10 +2338,6 @@ function Edit(props) {
     allowedFormats: [],
     className: "title"
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
-    style: {
-      backgroundColor: buttonBackgroundColor,
-      color: buttonTextColor
-    },
     onChange: advancedBtnOnlineBadge,
     value: online,
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("I am online", "ta-whatshelp"),
@@ -2375,10 +2345,6 @@ function Edit(props) {
     allowedFormats: [],
     className: "online"
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
-    style: {
-      backgroundColor: buttonBackgroundColor,
-      color: buttonTextColor
-    },
     onChange: advancedBtnOnlineBadge,
     value: offline,
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("I'm not available", "ta-whatshelp"),
@@ -2436,6 +2402,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const agentImage = __webpack_require__(/*! ./images/shakib-al-hasan.jpg */ "./src/images/shakib-al-hasan.jpg");
+console.log(agentImage);
 function save(_ref) {
   let {
     attributes
@@ -2451,8 +2419,6 @@ function save(_ref) {
     offline,
     textAlignment,
     buttonLinkTarget,
-    buttonBackgroundColor,
-    buttonTextColor,
     visibility,
     border,
     iconTarget,
@@ -2501,7 +2467,7 @@ function save(_ref) {
     rel: "noopener noreferrer",
     target: buttonLinkTarget ? "_blank" : "_self"
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("img", {
-    src: imageUrl,
+    src: imageUrl ? imageUrl : agentImage,
     alt: "agent"
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     className: "info-wrapper"
@@ -2516,19 +2482,11 @@ function save(_ref) {
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     value: online,
     tagName: "p",
-    className: "online",
-    style: {
-      backgroundColor: buttonBackgroundColor,
-      color: buttonTextColor
-    }
+    className: "online"
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     value: offline,
     tagName: "p",
-    className: "offline",
-    style: {
-      backgroundColor: buttonBackgroundColor,
-      color: buttonTextColor
-    }
+    className: "offline"
   })))));
 }
 
@@ -2626,6 +2584,17 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
+
+/***/ }),
+
+/***/ "./src/images/shakib-al-hasan.jpg":
+/*!****************************************!*\
+  !*** ./src/images/shakib-al-hasan.jpg ***!
+  \****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/shakib-al-hasan.513e500b.jpg";
 
 /***/ }),
 
@@ -2800,6 +2769,18 @@ function _extends() {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -2814,6 +2795,26 @@ function _extends() {
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
