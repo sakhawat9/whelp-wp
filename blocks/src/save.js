@@ -39,6 +39,7 @@ export default function save({ attributes }) {
 
   const textClasses = classnames(`wHelpButtons-align-${textAlignment}`);
 
+  const basicBtn = classnames(`wHelp-button-4 vc-btn-bg`);
   const classes = classnames(`wHelpButtons wHelp-button-4 wHelp-btn-bg`);
   return (
     <>
@@ -46,7 +47,7 @@ export default function save({ attributes }) {
         <div className={`button-wrapper ${textClasses}`}>
           <a
             {...useBlockProps.save({
-              className: `${classes} ${buttonSize} ${borderRadius} ${visibility} ${border}`,
+              className: `${basicBtn} ${buttonSize} ${borderRadius} ${visibility} ${border}`,
             })}
             href={`https://wa.me/${numberInput}`}
             rel="noopener noreferrer"

@@ -472,7 +472,7 @@
 [class*='wHelp-button-'] {
   padding: 15px 30px;
   border: none;
-  color: var(--color-dark);
+  color: var(--color-light) !important;
   border-radius: 5px;
   font-weight: 600;
   display: inline-flex;
@@ -1503,6 +1503,7 @@
 	padding: 10px 20px;
 	text-decoration: none;
 	&:hover {
+    color: var(--color-light);
 		opacity: .85;
 	}
 	&.border-squared {

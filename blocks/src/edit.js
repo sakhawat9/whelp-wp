@@ -2472,6 +2472,7 @@ export default function Edit(props) {
 
   const textClasses = classnames(`wHelpButtons-align-${textAlignment}`);
 
+  const basicBtn = classnames(`wHelp-button-4 vc-btn-bg`);
   const classes = classnames(`wHelpButtons wHelp-button-4 wHelp-btn-bg`);
 
   const buttonSizeOptions = [
@@ -2594,7 +2595,7 @@ export default function Edit(props) {
           <div className={`button-wrapper ${textClasses}`}>
             <a
               {...useBlockProps({
-                className: `${classes} ${buttonSize} ${borderRadius} ${visibility}`,
+                className: `${basicBtn} ${buttonSize} ${borderRadius} ${visibility}`,
               })}
             >
               {iconTarget && (
@@ -2637,7 +2638,7 @@ export default function Edit(props) {
                     onClick={open}
                     style={{ marginBottom: "20px", fontSize: "16px" }}
                   >
-                    <span className="dashicons dashicons-cloud-upload"></span>{" "}
+                    <span style={{ marginRight: "5px" }} className="dashicons dashicons-cloud-upload"></span>{" "}
                     Agent photo
                   </Button>
                 )}

@@ -1911,6 +1911,7 @@ function Edit(props) {
     });
   };
   const textClasses = classnames__WEBPACK_IMPORTED_MODULE_4___default()(`wHelpButtons-align-${textAlignment}`);
+  const basicBtn = classnames__WEBPACK_IMPORTED_MODULE_4___default()(`wHelp-button-4 vc-btn-bg`);
   const classes = classnames__WEBPACK_IMPORTED_MODULE_4___default()(`wHelpButtons wHelp-button-4 wHelp-btn-bg`);
   const buttonSizeOptions = [{
     value: "size-small",
@@ -2060,7 +2061,7 @@ function Edit(props) {
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     className: `button-wrapper ${textClasses}`
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("a", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)({
-    className: `${classes} ${buttonSize} ${borderRadius} ${visibility}`
+    className: `${basicBtn} ${buttonSize} ${borderRadius} ${visibility}`
   }), iconTarget && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("span", {
     className: "dashicons dashicons-whatsapp"
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
@@ -2098,6 +2099,9 @@ function Edit(props) {
           fontSize: "16px"
         }
       }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("span", {
+        style: {
+          marginRight: "5px"
+        },
         className: "dashicons dashicons-cloud-upload"
       }), " ", "Agent photo");
     }
@@ -2471,11 +2475,12 @@ function save(_ref) {
     sundayEnd
   } = attributes;
   const textClasses = classnames__WEBPACK_IMPORTED_MODULE_3___default()(`wHelpButtons-align-${textAlignment}`);
+  const basicBtn = classnames__WEBPACK_IMPORTED_MODULE_3___default()(`wHelp-button-4 vc-btn-bg`);
   const classes = classnames__WEBPACK_IMPORTED_MODULE_3___default()(`wHelpButtons wHelp-button-4 wHelp-btn-bg`);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, buttonType === "basic-button" ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     className: `button-wrapper ${textClasses}`
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("a", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
-    className: `${classes} ${buttonSize} ${borderRadius} ${visibility} ${border}`
+    className: `${basicBtn} ${buttonSize} ${borderRadius} ${visibility} ${border}`
   }), {
     href: `https://wa.me/${numberInput}`,
     rel: "noopener noreferrer",

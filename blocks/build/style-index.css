@@ -430,7 +430,7 @@
 [class*=wHelp-button-] {
   padding: 15px 30px;
   border: none;
-  color: var(--color-dark);
+  color: var(--color-light) !important;
   border-radius: 5px;
   font-weight: 600;
   display: inline-flex;
@@ -1397,6 +1397,7 @@
   text-decoration: none;
 }
 .wp-block-block-course-buttons:hover, .wp-block-create-block-whatsapp-button:hover {
+  color: var(--color-light);
   opacity: 0.85;
 }
 .wp-block-block-course-buttons.border-squared, .wp-block-create-block-whatsapp-button.border-squared {
