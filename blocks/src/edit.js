@@ -11,7 +11,7 @@ import classnames from "classnames";
 import "./editor.scss";
 import { PanelBody, ToggleControl, Button, ComboboxControl } from "@wordpress/components";
 import { useState } from '@wordpress/element';
-const agentImage = require('./images/shakib-al-hasan.jpg');
+const agentImage = require('./images/user.jpg');
 
 const { SelectControl, TextControl } = wp.components;
 
@@ -2463,7 +2463,7 @@ export default function Edit(props) {
 
   const textClasses = classnames(`wHelpButtons-align-${textAlignment}`);
 
-  const basicBtn = classnames(`wHelp-button-4 vc-btn-bg`);
+  const basicBtn = classnames(`wHelp-button-4 wHelp-btn-bg`);
   const classes = classnames(`wHelpButtons wHelp-button-4 wHelp-btn-bg`);
 
   const buttonSizeOptions = [

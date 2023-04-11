@@ -32,7 +32,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const agentImage = __webpack_require__(/*! ./images/shakib-al-hasan.jpg */ "./src/images/shakib-al-hasan.jpg");
+const agentImage = __webpack_require__(/*! ./images/user.jpg */ "./src/images/user.jpg");
 const {
   SelectControl,
   TextControl
@@ -1900,7 +1900,7 @@ function Edit(props) {
     });
   };
   const textClasses = classnames__WEBPACK_IMPORTED_MODULE_4___default()(`wHelpButtons-align-${textAlignment}`);
-  const basicBtn = classnames__WEBPACK_IMPORTED_MODULE_4___default()(`wHelp-button-4 vc-btn-bg`);
+  const basicBtn = classnames__WEBPACK_IMPORTED_MODULE_4___default()(`wHelp-button-4 wHelp-btn-bg`);
   const classes = classnames__WEBPACK_IMPORTED_MODULE_4___default()(`wHelpButtons wHelp-button-4 wHelp-btn-bg`);
   const buttonSizeOptions = [{
     value: "size-small",
@@ -2402,7 +2402,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const agentImage = __webpack_require__(/*! ./images/shakib-al-hasan.jpg */ "./src/images/shakib-al-hasan.jpg");
+const agentImage = __webpack_require__(/*! ./images/user.jpg */ "./src/images/user.jpg");
 console.log(agentImage);
 function save(_ref) {
   let {
@@ -2441,7 +2441,7 @@ function save(_ref) {
     sundayEnd
   } = attributes;
   const textClasses = classnames__WEBPACK_IMPORTED_MODULE_3___default()(`wHelpButtons-align-${textAlignment}`);
-  const basicBtn = classnames__WEBPACK_IMPORTED_MODULE_3___default()(`wHelp-button-4 vc-btn-bg`);
+  const basicBtn = classnames__WEBPACK_IMPORTED_MODULE_3___default()(`wHelp-button-4 wHelp-btn-bg`);
   const classes = classnames__WEBPACK_IMPORTED_MODULE_3___default()(`wHelpButtons wHelp-button-4 wHelp-btn-bg`);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, buttonType === "basic-button" ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     className: `button-wrapper ${textClasses}`
@@ -2587,14 +2587,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/images/shakib-al-hasan.jpg":
-/*!****************************************!*\
-  !*** ./src/images/shakib-al-hasan.jpg ***!
-  \****************************************/
+/***/ "./src/images/user.jpg":
+/*!*****************************!*\
+  !*** ./src/images/user.jpg ***!
+  \*****************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "images/shakib-al-hasan.513e500b.jpg";
+module.exports = __webpack_require__.p + "images/user.65223f50.jpg";
 
 /***/ }),
 

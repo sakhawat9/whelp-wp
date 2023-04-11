@@ -1,6 +1,6 @@
 import { useBlockProps, RichText } from "@wordpress/block-editor";
 import classnames from "classnames";
-const agentImage = require('./images/shakib-al-hasan.jpg');
+const agentImage = require('./images/user.jpg');
 console.log(agentImage);
 export default function save({ attributes }) {
   const {
@@ -38,7 +38,7 @@ export default function save({ attributes }) {
 
   const textClasses = classnames(`wHelpButtons-align-${textAlignment}`);
 
-  const basicBtn = classnames(`wHelp-button-4 vc-btn-bg`);
+  const basicBtn = classnames(`wHelp-button-4 wHelp-btn-bg`);
   const classes = classnames(`wHelpButtons wHelp-button-4 wHelp-btn-bg`);
   return (
     <>

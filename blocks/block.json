@@ -144,7 +144,7 @@
 		  },
 		"sundayEnd": {
 			"type": "string",
-			"default": "05:01"
+			"default": "05:00"
 		  }
 	}
 }
