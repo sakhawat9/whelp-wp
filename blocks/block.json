@@ -66,10 +66,6 @@
 			"type": "string",
 			"default": ""
 		},
-		"border": {
-			"type": "string",
-			"default": ""
-		},
 		"textAlignment": {
 			"type": "string",
 			"default": "left"
@@ -92,6 +88,70 @@
 		"numberInput": {
 			"type": "string",
 			"default": ""
-		}
+		},
+		"imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+		"timeZone": {
+			"type": "string",
+			"default": ""
+		  },
+		"mondayStart": {
+			"type": "string",
+			"default": "00:01"
+		  },
+		"mondayEnd": {
+			"type": "string",
+			"default": "23:59"
+		  },
+		"tuesdayStart": {
+			"type": "string",
+			"default": "00:01"
+		  },
+		"tuesdayEnd": {
+			"type": "string",
+			"default": "23:59"
+		  },
+		"wednesdayStart": {
+			"type": "string",
+			"default": "00:01"
+		  },
+		"wednesdayEnd": {
+			"type": "string",
+			"default": "23:59"
+		  },
+		"thursdayStart": {
+			"type": "string",
+			"default": "00:01"
+		  },
+		"thursdayEnd": {
+			"type": "string",
+			"default": "23:59"
+		  },
+		"fridayStart": {
+			"type": "string",
+			"default": "00:01"
+		  },
+		"fridayEnd": {
+			"type": "string",
+			"default": "23:59"
+		  },
+		"saturdayStart": {
+			"type": "string",
+			"default": "00:01"
+		  },
+		"saturdayEnd": {
+			"type": "string",
+			"default": "23:59"
+		  },
+		"sundayStart": {
+			"type": "string",
+			"default": "00:01"
+		  },
+		"sundayEnd": {
+			"type": "string",
+			"default": "05:01"
+		  }
 	}
 }

@@ -13,11 +13,28 @@ export default function save({ attributes }) {
     offline,
     textAlignment,
     buttonLinkTarget,
-    buttonUrl,
+    buttonBackgroundColor,
+    buttonTextColor,
     visibility,
     border,
     iconTarget,
+    imageUrl,
     numberInput,
+    timeZone,
+    mondayStart,
+    mondayEnd,
+    tuesdayStart,
+    tuesdayEnd,
+    wednesdayStart,
+    wednesdayEnd,
+    thursdayStart,
+    thursdayEnd,
+    fridayStart,
+    fridayEnd,
+    saturdayStart,
+    saturdayEnd,
+    sundayStart,
+    sundayEnd
   } = attributes;
 
   const textClasses = classnames(`wHelpButtons-align-${textAlignment}`);
@@ -45,24 +62,35 @@ export default function save({ attributes }) {
         <div className={`button-wrapper ${textClasses}`}>
           <a
             {...useBlockProps.save({
-              className: `wHelpButtons wHelp-button-4 wHelp-btn-bg wHelp-show-everywhere avatar-active wHelp-btn-sm ${classes}`,
+              className: `${classes} ${buttonSize} ${borderRadius} ${visibility}`,
             })}
+            data-btnavailablety={`{ "monday":"${mondayStart}-${mondayEnd}", "tuesday":"${tuesdayStart}-${tuesdayEnd}", "wednesday":"${wednesdayStart}-${wednesdayEnd}", "thursday":"${thursdayStart}-${thursdayEnd}", "friday":"${fridayStart}-${fridayEnd}", "saturday":"${saturdayStart}-${saturdayEnd}", "sunday":"${sundayStart}-${sundayEnd}" }`}
+            data-timezone={timeZone}
             href={`https://wa.me/${numberInput}`}
             rel="noopener noreferrer"
             target={buttonLinkTarget ? "_blank" : "_self"}
           >
-            <img
-              src="http://wordpresspractice.local/wp-content/plugins/chat-help/assets/image/user.webp"
-              alt="user"
-            />
+            <img src={imageUrl} alt="agent" />
             <div className="info-wrapper">
               <RichText.Content value={info} tagName="p" className="info" />
               <RichText.Content value={title} tagName="p" className="title" />
-              <RichText.Content value={online} tagName="p" className="online" />
+              <RichText.Content
+                value={online}
+                tagName="p"
+                className="online"
+                style={{
+                  backgroundColor: buttonBackgroundColor,
+                  color: buttonTextColor,
+                }}
+              />
               <RichText.Content
                 value={offline}
                 tagName="p"
                 className="offline"
+                style={{
+                  backgroundColor: buttonBackgroundColor,
+                  color: buttonTextColor,
+                }}
               />
             </div>
           </a>
